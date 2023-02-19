@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "userName": "papa",
+      "name": "don papa",
+      "userEmail": "ashdsadh@jahksd.com",
+      "password": "admin",
+      "id": "9ee718bb-de71-4f88-8889-f170c4c802f2"
+    },
+    {
+      "userName": "wasu",
+      "name": "wasu",
+      "userEmail": "wasu@wasu.wasu",
+      "password": "wasu",
+      "id": "3593ff8e-4317-4a3a-a12b-9eb8e2e0ee6d"
+    }
+  ]
+}
