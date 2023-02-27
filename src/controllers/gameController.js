@@ -8,11 +8,11 @@ const getAllGames = (req, res) => {
 }
 
 const getGameById = (req, res) => {
-    const { params: { gameId } } = req
+    const { params: { id }, } = req
 
-    if(!gameId){ return }
+    if(!id){ return }
 
-    const game = gameService.getGameById(gameId)
+    const game = gameService.getGameById(id)
     res.send({status : "ok", data: game})
 }
 

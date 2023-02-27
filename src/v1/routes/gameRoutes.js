@@ -5,6 +5,6 @@ const gameController = require("../../controllers/gameController")
 router
     .get("/", gameController.getAllGames)
     .get("/rating", gameController.getGameByRating)
-    .get("/:gameId", gameController.getGameById)
+    .get("/:id", gameController.getGameById)
 
 module.exports = router

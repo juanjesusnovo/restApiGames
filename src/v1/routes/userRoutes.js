@@ -6,8 +6,8 @@ router
     .post("/", userController.createNewUser)
     .get("/", userController.getAllUsers)
     .get("/:userId", userController.getUserById)
-    .get("/:userName", userController.getUserByName)
+    /* .get("/:userName", userController.getUserByName)
     .patch("/:userId", userController.updateUserById)
-    .delete("/:userId", userController.deleteUserById)
+    .delete("/:userId", userController.deleteUserById) */
 
 module.exports = router

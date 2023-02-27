@@ -1,24 +1,24 @@
-const DB = require("./allGames.json")
-const mongoosePaginate = require("mongoose-paginate-v2")
+const db = require("./allGames.json")
 
 const getAllGames = (filterParam) => {
-    let allGames = DB.games
+    let allGames = db.games
 
-    if(filterParam.platforms){ return DB.games.filter((game) => game.platforms.includes(filterParam.platforms.toLowerCase()))}
-    if(filterParam.genres){ return DB.games.filter((game) => game.genres.includes(filterParam.genres))}
-    if(filterParam.tags){ return DB.games.filter((game) => game.tags.includes(filterParam.tags))}
+    if(filterParam.platforms){ return db.games.filter((game) => game.platforms.includes(filterParam.platforms.toLowerCase()))}
+    if(filterParam.genres){ return db.games.filter((game) => game.genres.includes(filterParam.genres))}
+    if(filterParam.tags){ return db.games.filter((game) => game.tags.includes(filterParam.tags))}
     
     return allGames
 }
 
-const getGameById = (gameId) => {
-    const game = DB.games.find((game) => game.id === gameId)
-    if(!game){ return }
+const getGameById = (id) => {
+    if(!id){ return }
+    const idOk = parseInt(id)
+    const game = db.games.find((game) => game.id === idOk)
     return game
 }
 
 const getGameByRating = () => {
-    const gamesBestRated = DB.games.sort(((a, b) => a.rating > b.rating))
+    const gamesBestRated = db.games.sort(((a, b) => a.rating > b.rating))
     return gamesBestRated
 }
 
