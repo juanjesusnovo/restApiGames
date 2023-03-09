@@ -13,7 +13,8 @@ const createNewUser = (req, res) => {
 }
 
 const getAllUsers = (req, res) => {
-    const allUsers = userService.getAllUsers()
+    const { userName } = req.query
+    const allUsers = userService.getAllUsers({ userName })
     res.send({status: "ok", data: allUsers})
 }
 
@@ -23,15 +24,6 @@ const getUserById = (req, res) => {
     if(!userId){ return }
 
     const user = userService.getUserById(userId)
-    res.send({status:"ok", data: user})
-}
-
-const getUserByName = (req, res) => {
-    const { params: {userName} } = req
-
-    if(!userName){ return }
-
-    const user = userService.getUserByName(userName)
     res.send({status:"ok", data: user})
 }
 
@@ -60,6 +52,5 @@ module.exports = {
     getAllUsers,
     getUserById,
     updateUserById,
-    deleteUserById,
-    getUserByName
+    deleteUserById
 }

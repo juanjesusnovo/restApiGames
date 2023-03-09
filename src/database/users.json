@@ -5,14 +5,30 @@
       "name": "don papa",
       "userEmail": "ashdsadh@jahksd.com",
       "password": "admin",
-      "id": "9ee718bb-de71-4f88-8889-f170c4c802f2"
+      "id": "9ee718bb-de71-4f88-8889-f170c4c802f2",
+      "stash": []
     },
     {
       "userName": "wasu",
       "name": "wasu",
       "userEmail": "wasu@wasu.wasu",
       "password": "wasu",
-      "id": "3593ff8e-4317-4a3a-a12b-9eb8e2e0ee6d"
+      "id": "3593ff8e-4317-4a3a-a12b-9eb8e2e0ee6d",
+      "stash": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "userName": "ksdjfh",
+      "name": "sdjnsdkf",
+      "userEmail": "sjfnsaf@jahksd.com",
+      "password": "sffdksd",
+      "id": "8c11b7f9-fbde-4acc-8770-04ff22da7e55",
+      "stash": []
     }
   ]
 }

@@ -3,26 +3,20 @@ const { saveToDb } = require("./utils")
 
 const createNewUser = (newUser) => {
     const isAlreadyAdded = db.users.findIndex((user) => user.name === newUser.name) > -1
-    if(isAlreadyAdded){return}
+    if(isAlreadyAdded){ return }
     db.users.push(newUser)
     saveToDb(db)
     return newUser
 }
 
-const getAllUsers = () => {
+const getAllUsers = (filterParam) => {
+    let allUsers = db.users
+    if(filterParam.userName){ return db.users.filter((user) => user.userName === filterParam.userName)}
     return db.users
 }
 
 const getUserById = (userId) => {
     const user = db.users.find((user) => user.id === userId)
-    
-    if(!user){ return }
-
-    return user
-}
-
-const getUserByName = (userName) => {
-    const user = db.users.find((user) => user.userName === userName)
     
     if(!user){ return }
 
@@ -58,6 +52,5 @@ module.exports = {
     getAllUsers,
     getUserById,
     updateUserById,
-    deleteUserById,
-    getUserByName
+    deleteUserById
 }

@@ -5,24 +5,20 @@ const User = require("../database/User")
 const createNewUser = (newUser) => {
     const userToInsert = {
         ...newUser,
-        id: uuid()
+        id: uuid(),
+        stash: []
     }
     const createdUser = User.createNewUser(userToInsert)
     return createdUser
 }
 
-const getAllUsers = () => {
-    const allUsers = User.getAllUsers()
+const getAllUsers = ( filterParam ) => {
+    const allUsers = User.getAllUsers( filterParam )
     return allUsers
 }
 
 const getUserById = (userId) => {
     const user = User.getUserById(userId)
-    return user
-}
-
-const getUserByName = (userName) => {
-    const user = User.getUserByName(userName)
     return user
 }
 
@@ -40,6 +36,5 @@ module.exports = {
     getAllUsers,
     getUserById,
     updateUserById,
-    deleteUserById,
-    getUserByName
+    deleteUserById
 }
